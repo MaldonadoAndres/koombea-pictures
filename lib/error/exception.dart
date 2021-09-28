@@ -1,2 +1,3 @@
 class NetworkException implements Exception {}
-class HiveException implements Exception {}
+
+class LocalStorageExecption implements Exception {}

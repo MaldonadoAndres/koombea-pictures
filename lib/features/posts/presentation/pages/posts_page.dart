@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
 import 'package:koombea_pictures/features/posts/presentation/bloc/posts_bloc.dart';
+import 'package:koombea_pictures/features/posts/presentation/widgets/error_view.dart';
 import 'package:koombea_pictures/features/posts/presentation/widgets/posts_lists.dart';
 import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 
@@ -22,6 +23,9 @@ class PostsPage extends StatelessWidget {
                   onRefresh: () async => context.read<PostsBloc>().add(PostsRefreshed()),
                   child: PostsList(users: state.users),
                 );
+              }
+              if (state is PostsError) {
+                return ErrorView(msg: state.msg);
               }
               return const Center(
                 child: CircularProgressIndicator(),

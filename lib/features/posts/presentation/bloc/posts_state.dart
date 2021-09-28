@@ -17,4 +17,8 @@ class PostsLoaded extends PostsState {
 
 class PostsLoading extends PostsState {}
 
-class PostsError extends PostsState {}
+class PostsError extends PostsState {
+  final String msg;
+
+  const PostsError(this.msg);
+}
