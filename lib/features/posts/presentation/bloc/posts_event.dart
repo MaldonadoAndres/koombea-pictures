@@ -1,6 +1,12 @@
 part of 'posts_bloc.dart';
 
-@freezed
-class PostsEvent with _$PostsEvent {
-  const factory PostsEvent.started() = _Started;
+abstract class PostsEvent extends Equatable {
+  const PostsEvent();
+
+  @override
+  List<Object> get props => [];
 }
+
+class PostsStarted extends PostsEvent {}
+
+class PostsRefreshed extends PostsEvent {}

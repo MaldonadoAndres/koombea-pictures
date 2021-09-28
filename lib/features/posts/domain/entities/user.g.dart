@@ -20,7 +20,7 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'uid': instance.uid,
       'name': instance.name,
       'email': instance.email,
-      'profile_pic': instance.profilPicUrl,
+      'profile_pic': instance.profilePicUrl,
       'posts': instance.posts.map((e) => e.toJson()).toList(),
     };
 
